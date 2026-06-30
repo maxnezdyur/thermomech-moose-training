@@ -26,7 +26,7 @@ mpiexec -n 4 combined-opt -i contact/fuel_clad_contact.i  # run in parallel
 Each input writes an Exodus file (`*.e`) — open it in **ParaView** (or Peacock) to see
 the fields. Postprocessors write `*.csv` for numbers and plots.
 
-> Run the `reactor_inverse_*` examples from this directory: the inverse problem launches
+> Run the `reactor_inverse_*` examples from inside `reactor/`: the inverse problem launches
 > `reactor_inverse_forward_and_adjoint.i` as a sub-app and reads `reactor_thermocouples.csv`.
 
 ## What's here
@@ -65,7 +65,7 @@ the fields. Postprocessors write `*.csv` for numbers and plots.
 |---|---|
 | `fuel_clad_contact.i` | a 3-D fuel cylinder swells, closes a small gap, and presses on (and slides up past) its cladding via frictionless penalty contact |
 
-### Reactor worked examples (repo root)
+### `reactor/` — Reactor worked examples
 | file | what it shows |
 |---|---|
 | `reactor_conduction.i` | axisymmetric fuel-rod conduction: hot centerline, cooled surface |
