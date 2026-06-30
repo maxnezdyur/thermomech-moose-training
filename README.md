@@ -75,6 +75,14 @@ the fields. Postprocessors write `*.csv` for numbers and plots.
 | `reactor_inverse_forward_and_adjoint.i`, `reactor_inverse_forward.i` | forward/adjoint sub-apps used by the inverse problem |
 | `reactor_thermocouples.csv` | synthetic thermocouple measurements for the inverse problem |
 
+### `coupling/` — Multiphysics coupling with MultiApps
+| file | what it shows |
+|---|---|
+| `cht_solid_parent.i` | conjugate heat transfer: a heated solid wall coupled to a fluid sub-app via `[MultiApps]` + `[Transfers]` with fixed-point (Picard) iteration — Robin-Robin exchange of the interface temperature. Run this one. |
+| `cht_fluid_sub.i` | the fluid/coolant sub-app — a heat-conduction stand-in for a real Navier-Stokes/CFD input (runnable standalone). Swap it for a real NS input and the parent's coupling blocks don't change. |
+
+> Run from inside `coupling/`: `combined-opt -i cht_solid_parent.i`. It launches `cht_fluid_sub.i` as a sub-app; watch the fixed-point residual drop and the two interface-average temperatures converge.
+
 ---
 
 These are teaching inputs: simplified, linear-elastic where noted, and tuned to run
