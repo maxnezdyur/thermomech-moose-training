@@ -6,6 +6,9 @@ Runnable [MOOSE](https://mooseframework.inl.gov) input files for the 3-day train
 Everything here is an *input file* (`.i`) — you run and modify these; you do **not**
 need to write any C++.
 
+📑 **Lecture slides:** the full deck is in
+[`thermomech-training-slides.pdf`](thermomech-training-slides.pdf).
+
 ## Requirements
 
 - A working MOOSE installation
